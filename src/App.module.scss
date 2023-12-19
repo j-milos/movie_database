@@ -1,0 +1,30 @@
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 100%;
+
+        .heading{
+            padding:10px  40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .movies{
+            display: flex;
+            gap: 40px;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px 40px;
+            overflow: auto;  
+            
+            
+        }
+    }
+}
