@@ -2,7 +2,7 @@
     transition: transform 0.2s;
     position: relative;
 
-    .posetImg{
+    .posterImg{
     max-height: 400px;
 }
     .overlay{
@@ -13,8 +13,9 @@
         opacity: 0;
         background: rgba(0,0,0,0.8);
         transition: 0.5s ease;
-        font-size: 20px;
-        padding-top: 70px;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 25px 0;
         text-align: center;
     }
     &:hover .overlay{
