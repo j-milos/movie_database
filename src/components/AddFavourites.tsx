@@ -7,7 +7,7 @@ const AddFavourites = () => {
   return (
     <>
       <span className={s.addFavouritesText}>Add to Favourites</span>
-      <FontAwesomeIcon icon={faHeart} />
+      <FontAwesomeIcon icon={faHeart} className={s.heartIcon} />
     </>
   );
 };

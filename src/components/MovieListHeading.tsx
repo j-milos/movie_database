@@ -4,7 +4,7 @@ import s from "./MovieListHeading.module.scss";
 const MovieListHeading = (props) => {
   return (
     <div className={s.movieListHeading}>
-      <h1>{props.heading}</h1>
+      <span>{props.heading}</span>
     </div>
   );
 };

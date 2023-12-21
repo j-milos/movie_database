@@ -8,7 +8,7 @@ const SearchBox = (props) => {
         className={s.searchInput}
         value={props.value}
         onChange={(event) => props.setSearchValue(event.target.value)}
-        placeholder="Type to search..."
+        placeholder="Search for a movie,tv show,person....."
       ></input>
     </div>
   );
