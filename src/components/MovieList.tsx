@@ -1,19 +1,27 @@
-import React from "react";
 import s from "./MovieList.module.scss";
+import { MovieType } from "../types/types";
 
-const MoviesList = (props) => {
-  const FavouriteComponent = props.favouriteComponent;
+type MovieListProps = {
+  movies: MovieType[];
+  handleFavouritesClick: (movie: MovieType) => void;
+  favouriteComponent?: React.ReactNode;
+};
 
+const MoviesList: React.FC<MovieListProps> = ({
+  movies,
+  handleFavouritesClick,
+  favouriteComponent,
+}) => {
   return (
     <>
-      {props.movies.map((movie, index) => (
-        <div className={s.movieList} key={movie.id}>
+      {movies?.map((movie) => (
+        <div className={s.movieList} key={movie.imdbID}>
           <img src={movie.Poster} className={s.posterImg} alt="movie"></img>
           <div
-            onClick={() => props.handleFavouritesClick(movie)}
+            onClick={() => handleFavouritesClick(movie)}
             className={s.overlay}
           >
-            <FavouriteComponent />
+            {favouriteComponent}
           </div>
         </div>
       ))}

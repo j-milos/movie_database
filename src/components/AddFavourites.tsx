@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./AddFavourites.module.scss";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -5,13 +5,14 @@ import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import AddFavourites from "./components/AddFavourites";
 import RemoveFavourites from "./components/RemoveFavourites";
+import { MovieType } from "./types/types";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-  const [favourites, setFavourites] = useState<string[]>([]);
+  const [movies, setMovies] = useState<MovieType[]>([]);
+  const [favourites, setFavourites] = useState<MovieType[]>([]);
   const [searchValue, setSearchValue] = useState("");
 
-  const getMovieRequest = async (searchValue) => {
+  const getMovieRequest = async (searchValue: string) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=4bdb0a10`;
 
     const response = await fetch(url);
@@ -27,24 +28,27 @@ function App() {
   }, [searchValue]);
 
   useEffect(() => {
-    const movieFavourites = JSON.parse(
-      localStorage.getItem("react-movie-app-favourites")
+    const favoriteMoviesUnparsed = localStorage.getItem(
+      "react-movie-app-favourites"
     );
+    if (!favoriteMoviesUnparsed) return;
+
+    const movieFavourites = JSON.parse(favoriteMoviesUnparsed);
 
     setFavourites(movieFavourites);
   }, []);
 
-  const saveToLocalStorage = (items) => {
+  const saveToLocalStorage = (items: MovieType[]) => {
     localStorage.setItem("react-movie-app-favourites", JSON.stringify(items));
   };
 
-  const addFavouriteMovie = (movie) => {
+  const addFavouriteMovie = (movie: MovieType) => {
     const newFavouriteList = [...favourites, movie];
     setFavourites(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
   };
 
-  const removeFavouritesMovie = (movie) => {
+  const removeFavouritesMovie = (movie: MovieType) => {
     const newFavouriteList = favourites.filter(
       (favourite) => favourite.imdbID !== movie.imdbID
     );
@@ -76,7 +80,7 @@ function App() {
           <MoviesList
             movies={movies}
             handleFavouritesClick={addFavouriteMovie}
-            favouriteComponent={AddFavourites}
+            favouriteComponent={<AddFavourites />}
           />
         </div>
         <div className={s.movieUniverseTextSection}>
@@ -105,7 +109,7 @@ function App() {
           <MoviesList
             movies={favourites}
             handleFavouritesClick={removeFavouritesMovie}
-            favouriteComponent={RemoveFavourites}
+            favouriteComponent={<RemoveFavourites />}
           />
         </div>
       </div>
