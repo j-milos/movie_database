@@ -15,7 +15,7 @@ const MoviesList: React.FC<MovieListProps> = ({
   return (
     <>
       {movies?.map((movie) => (
-        <div className={s.movieList} key={movie.imdbID}>
+        <div key={movie.imdbID} className={s.movieList}>
           <img src={movie.Poster} className={s.posterImg} alt="movie"></img>
           <div
             onClick={() => handleFavouritesClick(movie)}
