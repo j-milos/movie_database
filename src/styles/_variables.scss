@@ -1,0 +1,19 @@
+html {
+  --primary-color: #0d2f53;
+  --secondary-color: #fff;
+  --movieheading-color: #0a2645;
+  --font-color: #070707;
+  --border-color: #efbb11;
+  --scrolltrack-color: #fff;
+  --scrolltrackthumb-color: #0a2645;
+}
+
+html[data-theme="dark"] {
+  --primary-color: #05203c;
+  --secondary-color: #1c3147;
+  --movieheading-color: #0f6cf0;
+  --font-color: #fff;
+  --border-color: #0f6cf0;
+  --scrolltrack-color: #0a2645;
+  --scrolltrackthumb-color: #fff;
+}
