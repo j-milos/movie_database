@@ -1,0 +1,68 @@
+@import "/src/styles/mixins";
+
+.navbar {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+
+  @include tablet() {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.navbarTextWrapper {
+  .titleLogo {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    white-space: nowrap;
+
+    img {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+}
+
+.spansWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+
+  @include tablet() {
+    width: 100%;
+    font-size: 12px;
+  }
+  @include mobile() {
+    display: none;
+  }
+}
+
+.verticaLine {
+  @include tablet() {
+    display: none;
+  }
+}
+
+.toogleBtnWrapper {
+  display: flex;
+  gap: 5px;
+  margin: 15px;
+
+  @include tablet() {
+    margin: 0;
+  }
+}
