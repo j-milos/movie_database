@@ -1,0 +1,35 @@
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 8px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.outlined {
+  border-color: #04aa6d;
+  color: rgb(237, 237, 237);
+  font-weight: 600;
+  background-color: transparent;
+
+  &:hover {
+    background-color: #04aa6d;
+    color: white;
+  }
+}
+
+.solid {
+  background-color: #04aa6d;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 10px;
+  &:hover {
+    background-color: #06764d;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+}
