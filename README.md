@@ -2,7 +2,7 @@
 
 ## Description
 
-Project description
+The goal of this project was to make a fully responsive movie database built with React, Typescript, and SCSS modules. Utilizing a REST API, users can effortlessly search for movies using search parameters, add favorites (stored locally), and explore detailed information about individual movies. The project is enhanced with a seamless dark and light mode switch using React context.
 
 ## Instructions
 
